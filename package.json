@@ -1,6 +1,6 @@
 {
   "name": "npm-pew-pew",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "license": "Apache-2.0",
   "packageManager": "yarn@4.6.0",
   "description": "Pewpew Vue 3 Component Library based on Naive UI. Uses TypeScript.",
