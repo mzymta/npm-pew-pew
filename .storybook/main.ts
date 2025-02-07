@@ -17,8 +17,7 @@ const config: StorybookConfig = {
     disableWhatsNewNotifications: true,
   },
   async viteFinal(c) {
-    // Set base to './' to make paths relative
-    c.base = './';
+    c.base = '/npm-pew-pew/';
 
     return c;
   },
