@@ -33,12 +33,11 @@ jobs:
       - name: Build Storybook
         run: yarn build-storybook
 
-      - name: Git config
-        run: |
-          git config --global user.email "ekonyakhin@gmail.com"
-          git config --global user.name "mzymta"
-
       - name: Deploy Storybook to GitHub Pages
-        run: yarn deploy-storybook
+        run: |
+          git remote set-url origin https://git:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          git config --global user.name "github-actions-bot"
+          git config --global user.email "support+actions@github.com"
+          yarn deploy-storybook
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
