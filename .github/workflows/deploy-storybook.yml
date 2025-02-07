@@ -6,7 +6,7 @@ on:
       - master  # Trigger on push to 'main' branch
 
 jobs:
-  publish:
+  deploy-storybook:
     runs-on: ubuntu-latest
 
     strategy:
@@ -32,6 +32,11 @@ jobs:
 
       - name: Build Storybook
         run: yarn build-storybook
+
+      - name: Git config
+        run: |
+          git config user.email 'github-actions@github.com'
+          git config user.name 'github-actions'
 
       - name: Deploy Storybook to GitHub Pages
         run: yarn deploy-storybook
