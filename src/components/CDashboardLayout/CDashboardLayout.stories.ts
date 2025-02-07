@@ -3,14 +3,17 @@ import { computed, ref } from 'vue';
 import type { DropdownOption } from 'naive-ui/es/dropdown/src/interface';
 import { fn } from '@storybook/test';
 import CDashboardHeader from '../CDashboardHeader/CDashboardHeader.vue';
-import CDashboardFooter from '../CDashboardFooter/CDashboardFooter.vue';
 import CDashboardLayout from './CDashboardLayout.vue';
 import CDashboardPage from '../CDashboardPage/CDashboardPage.vue';
 import CTile from '../CTile/CTile.vue';
 import CIcon from '../CIcon/CIcon.vue';
 import CDashboardSidebar from '../CDashboardSidebar/CDashboardSidebar.vue';
 import CDashboardMenu from '../CDashboardMenu/CDashboardMenu.vue';
-import { type DashboardMenuGroup, DashboardMenuItemType, I18nLocale } from '../../types';
+import {
+  type DashboardMenuGroup,
+  DashboardMenuItemType,
+  I18nLocale,
+} from '../../types';
 
 const meta: Meta<typeof CDashboardLayout> = {
   title: 'Components/Dashboard/DashboardLayout',
@@ -26,7 +29,8 @@ const meta: Meta<typeof CDashboardLayout> = {
   parameters: {
     docs: {
       description: {
-        component: 'The DashboardLayout component provides a structured layout for dashboards, including slots for the header, side menu, content, and footer. It manages and exposes `navMeta`, which offers details such as `isSideMenuMinimized`, `isSideMenuHovered`, `isSideMenuOpen`, `isTopMenuOpen`, `isMobile`, `viewportWidth`, `headerHeight`, `sideMenuWidth`, and `scrollTop`. This metadata can be injected into child components as needed.',
+        component:
+          'The DashboardLayout component provides a structured layout for dashboards, including slots for the header, side menu, content, and footer. It manages and exposes `navMeta`, which offers details such as `isSideMenuMinimized`, `isSideMenuHovered`, `isSideMenuOpen`, `isTopMenuOpen`, `isMobile`, `viewportWidth`, `headerHeight`, `sideMenuWidth`, and `scrollTop`. This metadata can be injected into child components as needed.',
       },
     },
     layout: 'fullscreen',
@@ -35,7 +39,6 @@ const meta: Meta<typeof CDashboardLayout> = {
     components: {
       CDashboardLayout,
       CDashboardHeader,
-      CDashboardFooter,
       CIcon,
       CDashboardSidebar,
       CDashboardMenu,
@@ -78,7 +81,9 @@ const meta: Meta<typeof CDashboardLayout> = {
               type: DashboardMenuItemType.BUTTON,
               iconName: 'search',
               isHidden: false,
-              isActive: activeItem.value === 'ExpOption1' || activeItem.value === 'ExpOption2',
+              isActive:
+                activeItem.value === 'ExpOption1' ||
+                activeItem.value === 'ExpOption2',
               children: [
                 {
                   key: 'ExpOption1',
@@ -158,11 +163,15 @@ const meta: Meta<typeof CDashboardLayout> = {
       ]);
 
       return {
-        args, userMenuOptions, sideMenuItems, handleOptionSelect, locale,
+        args,
+        userMenuOptions,
+        sideMenuItems,
+        handleOptionSelect,
+        locale,
       };
     },
     template: `
-      <CDashboardLayout 
+      <CDashboardLayout
         :has-side-menu="args.hasSideMenu"
         @update:nav-meta="args['onUpdate:navMeta']">
         <template #header>
@@ -179,7 +188,7 @@ const meta: Meta<typeof CDashboardLayout> = {
                   style="width: 40px; height: 40px; color: var(--primary-color);"
                 />
                 <span
-                  class="logo__text" 
+                  class="logo__text"
                   style="font-size: 24px; font-family: 'NeueMachina';"
                 >Project</span>
               </div>
@@ -210,13 +219,6 @@ const meta: Meta<typeof CDashboardLayout> = {
             </CTile>
           </CDashboardPage>
         </main>
-        
-        <template #footer>
-          <CDashboardFooter
-            :locale="locale"
-            :is-centered="false"
-          />
-        </template>
       </CDashboardLayout>
     `,
   }),

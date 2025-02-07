@@ -13,7 +13,13 @@ export default [
 
   {
     name: 'app/files-to-ignore',
-    ignores: ['**/dist/**', '**/build/**', '**/dist-ssr/**', '**/coverage/**'],
+    ignores: [
+      '**/dist/**',
+      '**/build/**',
+      '**/dist-ssr/**',
+      '**/coverage/**',
+      '**/storybook-static/**',
+    ],
   },
 
   // Essential Vue and TypeScript configurations
