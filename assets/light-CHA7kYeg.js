@@ -1,0 +1,1 @@
+import{c as t,d as r}from"./light-DsB5ODev.js";import{i as n}from"./light-aICc-wbJ.js";import{p}from"./light-BUP7UYSb.js";function a(e){const{boxShadow2:o}=e;return{menuBoxShadow:o}}const i=t({name:"Popselect",common:r,peers:{Popover:p,InternalSelectMenu:n},self:a});export{i as p};

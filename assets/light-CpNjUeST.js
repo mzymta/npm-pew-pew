@@ -1,0 +1,1 @@
+import{c as e,d as r}from"./light-DsB5ODev.js";import{i}from"./light-3lQabVNk.js";import{b as n}from"./light-CaBpc4YN.js";function m(t){const{textColorDisabled:o}=t;return{iconColorDisabled:o}}const p=e({name:"InputNumber",common:r,peers:{Button:n,Input:i},self:m});export{p as i};

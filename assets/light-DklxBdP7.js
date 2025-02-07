@@ -1,0 +1,1 @@
+import{d as s}from"./light-DsB5ODev.js";function i(r){const{errorColor:o,infoColor:n,successColor:c,warningColor:e,fontFamily:l}=r;return{color:o,colorInfo:n,colorSuccess:c,colorError:o,colorWarning:e,fontSize:"12px",fontFamily:l}}const a={name:"Badge",common:s,self:i};export{a as b};
